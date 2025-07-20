@@ -3,15 +3,17 @@
 	<groupId>com.java8</groupId>
 	<artifactId>StreamAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
+			<version>1.18.38</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 </project>

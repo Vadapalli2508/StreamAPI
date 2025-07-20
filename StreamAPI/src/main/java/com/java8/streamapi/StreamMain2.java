@@ -37,10 +37,10 @@ public class StreamMain2 {
 		list.stream().sorted(Comparator.reverseOrder()).skip(2).limit(1).forEach(System.out::println);
 
 		// sum of numbers
-		System.out.println(list.stream().reduce((e1, e2) -> e1 + e2).get());
+		System.out.println(list.stream().reduce(Integer::sum).get());
 
 		// avg of numbers
-		System.out.println(list.stream().mapToInt(e -> e).average().getAsDouble());
+		list.stream().mapToInt(e -> e).average().ifPresentOrElse(System.out::println, () -> System.out.println("Not element found"));
 
 		// square
 		System.out.println(list.stream().mapToInt(e -> e * e).average().getAsDouble());
@@ -71,7 +71,7 @@ public class StreamMain2 {
 		}));
 
 		//sum of first 2 distinct numbers
-		System.out.println(list.stream().distinct().limit(2).reduce((e1,e2)->e1+e2));
+		System.out.println(list.stream().distinct().limit(2).reduce(Integer::sum));
 		
 		// secLowest
 		System.out.println("Second Lowest " + list.stream().sorted().distinct().skip(1).findFirst());
